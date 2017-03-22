@@ -41,6 +41,7 @@ for(i in 1:n)
   #myFile <-  tk_choose.files(getwd(), caption="Choose file")
   
   # read in a csv, but skip the 2nd row
+  # this code courtesy of Paul Hiemstra, http://stackoverflow.com/questions/15860071/read-csv-header-on-first-line-skip-second-line
   all_content <- readLines(myFile)
   skip_second <- all_content[-2]
   ysi.data <- read.csv(textConnection(skip_second), header = TRUE, stringsAsFactors = FALSE)
